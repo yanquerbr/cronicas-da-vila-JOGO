@@ -190,7 +190,7 @@ kbd { font: 600 13px var(--ui); background: #2a1e30; border: 2px solid var(--lin
 // Crônicas da Vila: protótipo jogável (solo). Arte da série: minis 12x15,
 // contorno #1c101c, fonte pixel da série, escala inteira.
 // ====================================================================
-const SPR = {"yanquer":{"rows":["...k.kk.k...",".kkhkhhkhkk.","khhhhhhhhhhk","kHhhihhihhHk","kHhhhhhhhhHk","kHssssssmsHk","kHssessemsHk",".kHhhhhhhHk.","kaakHHHHkaak","kaakcccckaak","kkgkcCCckgkk","..kctTTtck..","..kggggggk..","..kbk..kbk..","..kkk..kkk.."],"pal":{"k":"#1c101c","h":"#3fd2e6","H":"#1f86aa","D":"#16607e","i":"#b4f6ff","s":"#e0a47a","S":"#b07850","e":"#1c101c","r":"#c25a5a","u":"#946036","b":"#2e1a10","c":"#6c7c8e","C":"#46505e","t":"#7a4a2a","T":"#4f2e1a","g":"#7a4a24","G":"#6a6670","a":"#c4ced6","m":"#4f9da3"}},"drakin":{"rows":[".kk........kk.","kxdk......kdxk",".kxdk....kdxk.","..kddkkkkddk..","..kdrrrrrrdk..","..krrrrrrrrk..","..krEkrrkErk..","..krrRRRRrrk..","kOOkdRddRdkOOk","kOOkddddddkkkk","kdkkddddddkddk","kdkqqqqqqqkdtk",".kkqqQqqQqkdtk","..kqqqqqqqkddk","..krrk..krrkk.","..kRRk..kRRk..","..kkkk..kkkk.."],"pal":{"k":"#1c101c","x":"#a49397","d":"#554458","D":"#34283a","r":"#b43435","R":"#7a1e24","E":"#ffc314","O":"#ff8c1e","q":"#851836","Q":"#3c141e","Z":"#ff1e1e","t":"#20bebe","a":"#a49397"}},"garnier":{"rows":["..kkkkkkkk..",".khhihhihhk.","khhhhhhhhhhk","kuoOuuuuOouk","khsssssssshk","khsesssseshk",".kSssssssSk.","..kksssskk..","kwwkaaaakwmk","kwkayaayakMk","kskaaaaaakmk",".kkbybbybkk.","..kaaaaaak..","..kBk..kBk..","..kkk..kkk.."],"pal":{"k":"#1c101c","h":"#8a4a2a","H":"#5a2e1a","i":"#b86a3a","s":"#e0a47a","S":"#b07850","e":"#1c101c","u":"#5a4a44","o":"#f0a830","O":"#fff0c0","G":"#8a6a40","w":"#d8d0c0","W":"#a8a090","a":"#6a4024","A":"#4a2a14","y":"#c8a040","b":"#3a2618","p":"#3a3a44","B":"#2a1a10","m":"#8a96a0","M":"#5a6670","c":"#8a8070","C":"#6a6050"}},"joao":{"rows":["..k.k.kk.k.k..",".khkhkhhkhkhk.",".khhhhhhhhhhk.",".khhihhhhihhk.",".khsssssssshk.",".khsesssseshk.","..kssssssssk..","..kkyyyyyykk..",".knnknnnnknnk.","wknknNnnNnknkw","ykskllllllksky",".ykkynyynykky.","...kppppppk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","h":"#2a2230","H":"#16121c","i":"#4a4060","s":"#c88a5e","S":"#9a6440","e":"#1c101c","n":"#2a3a6a","N":"#1c2850","y":"#f2d040","Y":"#b89a20","l":"#5a3a20","p":"#3a3a44","P":"#2a2a32","B":"#2a1a10","w":"#fffbe0","a":"#c4ced6"}},"mariah":{"rows":["..kkkkkkkk.kk..",".khhhhhhhhkyyk.","khhhihhihhkykOk","khhhhhhhhhhkyk.","khHssssssHhkwk.","khHsessesHhkwk.","khHssssssHhkwk.","khHksssskHhkwk.","khkvvvvvvkhkwk.","kHkvvbbvvkHkwk.","kskvvbbvvkskwk.",".kvvVbbVvvkkwk.",".kvvvbbvvvkkwk.",".kyvyvvyvyk.k..",".kkkkkkkkkk...."],"pal":{"k":"#1c101c","h":"#1e1a3a","H":"#100e24","i":"#4a4280","s":"#e8b08a","S":"#b8805a","e":"#1c101c","v":"#6a3a9a","V":"#4a2470","b":"#1c1824","y":"#f2d060","O":"#7ad8ff","w":"#3a2a4a"}},"mago":{"rows":[".k...kk...k..","kyk.kyyk.kyk.","kfkkfyyfkkfk.","kffffFFffffk.","kFskksskksFk.","kFssessessFk.",".ksskwwkssk..",".kkrrggrrkk..","krrkrggrkrrk.","krkrRggRrkkyk","kskrrggrrkkfk",".kkddggddkkk.","..krrggrrk...",".krRrggrRrk..",".kkkkkkkkkk.."],"pal":{"k":"#1c101c","f":"#ff7a1a","F":"#c8321a","y":"#ffd84a","s":"#d89a6a","S":"#a86a44","r":"#8a1e1e","R":"#5a1214","g":"#d8a040","d":"#2a1a1e","w":"#f0e8d8","e":"#ffb030"}},"lobo":{"frames":[[".k.k................",".kkk................","kkkkkk..............","kEkkkkKKKKKKKKK.....","kkkkkkkkkkkkkkkkk...",".kkkkkkkkkkkkkkkkkK.","....kkkkkkkkkkkk..kK","....kk..kkk..kk.....","....kk...k...k.k....","...kk...kk..kk..k..."],[".k.k................",".kkk................","kkkkkk..............","kEkkkkKKKKKKKKK.....","kkkkkkkkkkkkkkkkk...",".kkkkkkkkkkkkkkkkkK.","....kkkkkkkkkkkk..kK",".....kk.kk..kk......","....k.k.k...k.k.....","...k..kk...k...k...."]],"pal":{"k":"#0b0e1c","K":"#1d2644","E":"#ffc23a"}},"bento":{"rows":["....kkkkkk....","...kmmmmmmk...","..kmmMMmmmmk..","kkkbbbbbbbbkkk","kmmmmmmmmmmmmk",".kksssssssskk.","..ksessssesk..","..kssssssssk..","..kssddddssk..",".kpkcccccckpP.","kppkccCCcckpPk","kpskcCccCckspk",".kklbybbyblkk.","...kggggggk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","m":"#7a5a3a","M":"#5a3e24","b":"#2e1a10","s":"#e0a47a","S":"#b07850","d":"#4a2c18","c":"#3f6a5a","C":"#2a4a40","p":"#8a6a40","P":"#6a4e2c","l":"#3a2618","y":"#f2c14e","g":"#3a3040","B":"#2a1a10"}},"celeste":{"rows":["...kkkkkkkk...","..kllllllllk..",".kllllLLllllk.",".kllllLLllllk.",".klgssssssglk.",".klsesssseslk.","..kssssssssk..","...kSssssSk...",".kvvkaaaakkhrk",".kvvkaaaakwwwk",".ksvkaAAakWwwk","..kvaaaaaakkk.","..kvaAaaAavk..","..kvvvvvvvvk..","..kkkkkkkkkk.."],"pal":{"k":"#1c101c","e":"#1c101c","l":"#3a6a4a","L":"#5a8a5a","g":"#b4b0b8","s":"#d89a70","S":"#a8704a","v":"#6a3a4a","V":"#4a2434","a":"#e0d8c4","A":"#b8ae96","w":"#a87a3a","W":"#7a5424","h":"#7ad66a","r":"#e07ab0"}},"otavio":{"rows":["k...kkkkkk....","a..kaaaaaak...","k.kaAaaaaAak..","wkaaaaaaaaaak.","w.kssssssssk..","w.ksessssesk..","w.kssssssssk..","w..kSssssSk...","wkaakTTTTkaak.","wkaakTttTkaak.","wkskTttttTksk.","k.kkbybbybkkLk","...kppppppkkOk","...kBk..kBkkkk","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","a":"#9aa6b2","A":"#d4dce4","s":"#c88a5e","S":"#9a6440","T":"#2e4a7a","t":"#1e3258","b":"#3a2618","y":"#c8a040","p":"#3a3a44","B":"#2a1a10","w":"#7a4a24","L":"#ffd860","O":"#fff4c0"}},"tereza":{"rows":["..............","...kkkkkkkk...","..krrrrrrrrk..",".krrRrrrrRkkkk",".khhhhhhhhkAak",".khssssssskkwk",".khsesssseshwk","..ksssssssskwk",".ksskllllkssk.",".ksskllllkssk.",".kSkllLLllkSk.","..kklllyllkk..","...kppppppk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","r":"#b83a2a","R":"#e0603a","h":"#2a1e1a","s":"#a8704a","S":"#7a4a2e","l":"#6a4024","L":"#4a2a14","p":"#3a3040","B":"#2a1a10","a":"#76828c","A":"#b4c0c8","w":"#7a4a24","y":"#ffb040"}},"lauro":{"rows":["...kkkkkkkk...","..kcccccccck..",".kcCccccccCck.",".kcwwwwwwwwck.",".kcssssssssck.","kkcsessssesck.","gkkwwwwwwwwk..","gkkwwwwwwwwk..","gkcckwwwwkcck.","GkcckWwwWkcck.","gkskcWwwWcksk.","gkkccbWWbcck..","gkkcccccccck..","gkkcCccccCck..","kkkkkkkkkkkk.."],"pal":{"k":"#1c101c","e":"#1c101c","c":"#6a5038","C":"#4a3624","w":"#e8e4dc","W":"#b8b2a8","s":"#d4a07a","S":"#a8764e","b":"#3a2618","g":"#8a6a40","G":"#6a4e2c"}}};
+const SPR = {"yanquer":{"rows":["......a.aa.a......","....a.ahaaha.a....","...aaahhhhhhaaa...","...ahhhihhihhha...","..ahchhhhhhhhcha..","..accaaahhaaacca..",".aacajjaaaakjacaa.","abacajijjjjijacaba","abdacljjjjjjkcadba","abdacmmmaammmcadba",".aaaacmmmmmmcaaaa.","..aeffammmmaffea..","..afgnaammaangfa..","..afgnnoooonngfa..","...agannoonnaga...","...aaappaappaaa...",".....aaaaaaaa....."],"pal":{"a":"#1c101c","b":"#e4ecf2","c":"#1f86aa","d":"#76828c","e":"#9aa6b6","f":"#7a8494","g":"#565e6e","h":"#3fd2e6","i":"#b4f6ff","j":"#e0a47a","k":"#c25a5a","l":"#4f9da3","m":"#2aa6cc","n":"#8a5a32","o":"#9aa0aa","p":"#5e3c22"},"ax":9,"ay":17},"drakin":{"rows":["..aa........aa..",".aba........aba.",".abcaaaaaaaacba.","..acccccccccca..",".adaceaccaecada.",".addaccccccadda.","..aadaccccadaa..","afa.agddddga.afa","affaaahhhhaaaffa","accibfahhafbicca","abbbaiiiiiiaaaaa",".aaaiibiibiiabba","addaiiibbiiiaija","addabbbbbbbbaija","kaaaahhhhhhaaija","b.abahhhhhhaabba","b.addahhhhaddaa.","b.addaaaaaadda..","b.aaaa....aaaa.."],"pal":{"a":"#1c101c","b":"#a49397","c":"#554458","d":"#b43435","e":"#ffc314","f":"#ff8c1e","g":"#7a1e24","h":"#851836","i":"#34283a","j":"#22c0c0","k":"#ff1e1e"},"ax":8,"ay":19},"garnier":{"rows":["..kkkkkkkk..",".khhihhihhk.","khhhhhhhhhhk","kuoOuuuuOouk","khsssssssshk","khsesssseshk",".kSssssssSk.","..kksssskk..","kwwkaaaakwmk","kwkayaayakMk","kskaaaaaakmk",".kkbybbybkk.","..kaaaaaak..","..kBk..kBk..","..kkk..kkk.."],"pal":{"k":"#1c101c","h":"#8a4a2a","H":"#5a2e1a","i":"#b86a3a","s":"#e0a47a","S":"#b07850","e":"#1c101c","u":"#5a4a44","o":"#f0a830","O":"#fff0c0","G":"#8a6a40","w":"#d8d0c0","W":"#a8a090","a":"#6a4024","A":"#4a2a14","y":"#c8a040","b":"#3a2618","p":"#3a3a44","B":"#2a1a10","m":"#8a96a0","M":"#5a6670","c":"#8a8070","C":"#6a6050"}},"joao":{"rows":["..k.k.kk.k.k..",".khkhkhhkhkhk.",".khhhhhhhhhhk.",".khhihhhhihhk.",".khsssssssshk.",".khsesssseshk.","..kssssssssk..","..kkyyyyyykk..",".knnknnnnknnk.","wknknNnnNnknkw","ykskllllllksky",".ykkynyynykky.","...kppppppk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","h":"#2a2230","H":"#16121c","i":"#4a4060","s":"#c88a5e","S":"#9a6440","e":"#1c101c","n":"#2a3a6a","N":"#1c2850","y":"#f2d040","Y":"#b89a20","l":"#5a3a20","p":"#3a3a44","P":"#2a2a32","B":"#2a1a10","w":"#fffbe0","a":"#c4ced6"}},"mariah":{"rows":["..kkkkkkkk.kk..",".khhhhhhhhkyyk.","khhhihhihhkykOk","khhhhhhhhhhkyk.","khHssssssHhkwk.","khHsessesHhkwk.","khHssssssHhkwk.","khHksssskHhkwk.","khkvvvvvvkhkwk.","kHkvvbbvvkHkwk.","kskvvbbvvkskwk.",".kvvVbbVvvkkwk.",".kvvvbbvvvkkwk.",".kyvyvvyvyk.k..",".kkkkkkkkkk...."],"pal":{"k":"#1c101c","h":"#1e1a3a","H":"#100e24","i":"#4a4280","s":"#e8b08a","S":"#b8805a","e":"#1c101c","v":"#6a3a9a","V":"#4a2470","b":"#1c1824","y":"#f2d060","O":"#7ad8ff","w":"#3a2a4a"}},"lobo":{"frames":[[".k.k................",".kkk................","kkkkkk..............","kEkkkkKKKKKKKKK.....","kkkkkkkkkkkkkkkkk...",".kkkkkkkkkkkkkkkkkK.","....kkkkkkkkkkkk..kK","....kk..kkk..kk.....","....kk...k...k.k....","...kk...kk..kk..k..."],[".k.k................",".kkk................","kkkkkk..............","kEkkkkKKKKKKKKK.....","kkkkkkkkkkkkkkkkk...",".kkkkkkkkkkkkkkkkkK.","....kkkkkkkkkkkk..kK",".....kk.kk..kk......","....k.k.k...k.k.....","...k..kk...k...k...."]],"pal":{"k":"#0b0e1c","K":"#1d2644","E":"#ffc23a"}},"casa":{"rows":["...kkkkkkkkkkkkkkkkkkkk...","..kRRRRRRRRRqqRRRRRRRRRk..","..krRrRrRrRrqqrRrRrRrRrk..",".kRRRRRRRRRRqqRRRRRRRRRRk.",".krRrRrRrRrRqqRrRrRrRrRrk.",".kRRRRRRRRRRqqRRRRRRRRRRk.","krRrRrRrRrRrqqrRrRrRrRrRrk","kRRRRRRRRRRRqqRRRRRRRRRRRk","krRrRrRrRrRrEErRrRrRrRrRrk","kRRRRRRRRRREwwERRRRRRRRRRk","krRrRrRrRrEwTTwErRrRrRrRrk","kRRRRRRRREwwTTwwERRRRRRRRk","krRrRrRrEwwwTTwwwErRrRrRrk","kRRRRRREwwwwTTwwwwERRRRRRk","krRrRrEwwwwwTTwwwwwErRrRrk","kkkkkEEEEEEEEEEEEEEEEkkkkk","..kTwwwwTwwwwwwwwTwwwwTk..","..kTwkkkTwwwwwwwwTkkkwTk..","..kTwgykTwwwwwwwwTkygwTk..","..kTTTTTTTTTTTTTTTTTTTTk..","..kTwwwwTwkkkkkkwTwwwwTk..","..kTwwwwTwkddddkwTwwwwTk..","..kTwwwwTwkdoodkwTwwwwTk..","..kSsSsSsSkddddkSsSsSsSk..","..kSSsSSsSksppskSsSSsSSk..","...kkkkkkkkkkkkkkkkkkkk..."],"chamine":["...kkkkkkkkkkkkkkkkkkkk...","..kRRkCCCkRRqqRRRRRRRRRk..","..krRkcCckRrqqrRrRrRrRrk..",".kRRRkCCCkRRqqRRRRRRRRRRk.",".krRrRrRrRrRqqRrRrRrRrRrk.",".kRRRRRRRRRRqqRRRRRRRRRRk.","krRrRrRrRrRrqqrRrRrRrRrRrk","kRRRRRRRRRRRqqRRRRRRRRRRRk","krRrRrRrRrRrEErRrRrRrRrRrk","kRRRRRRRRRREwwERRRRRRRRRRk","krRrRrRrRrEwTTwErRrRrRrRrk","kRRRRRRRREwwTTwwERRRRRRRRk","krRrRrRrEwwwTTwwwErRrRrRrk","kRRRRRREwwwwTTwwwwERRRRRRk","krRrRrEwwwwwTTwwwwwErRrRrk","kkkkkEEEEEEEEEEEEEEEEkkkkk","..kTwwwwTwwwwwwwwTwwwwTk..","..kTwkkkTwwwwwwwwTkkkwTk..","..kTwgykTwwwwwwwwTkygwTk..","..kTTTTTTTTTTTTTTTTTTTTk..","..kTwwwwTwkkkkkkwTwwwwTk..","..kTwwwwTwkddddkwTwwwwTk..","..kTwwwwTwkdoodkwTwwwwTk..","..kSsSsSsSkddddkSsSsSsSk..","..kSSsSSsSksppskSsSSsSSk..","...kkkkkkkkkkkkkkkkkkkk..."]},"bento":{"rows":["....kkkkkk....","...kmmmmmmk...","..kmmMMmmmmk..","kkkbbbbbbbbkkk","kmmmmmmmmmmmmk",".kksssssssskk.","..ksessssesk..","..kssssssssk..","..kssddddssk..",".kpkcccccckpP.","kppkccCCcckpPk","kpskcCccCckspk",".kklbybbyblkk.","...kggggggk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","m":"#7a5a3a","M":"#5a3e24","b":"#2e1a10","s":"#e0a47a","S":"#b07850","d":"#4a2c18","c":"#3f6a5a","C":"#2a4a40","p":"#8a6a40","P":"#6a4e2c","l":"#3a2618","y":"#f2c14e","g":"#3a3040","B":"#2a1a10"}},"celeste":{"rows":["...kkkkkkkk...","..kllllllllk..",".kllllLLllllk.",".kllllLLllllk.",".klgssssssglk.",".klsesssseslk.","..kssssssssk..","...kSssssSk...",".kvvkaaaakkhrk",".kvvkaaaakwwwk",".ksvkaAAakWwwk","..kvaaaaaakkk.","..kvaAaaAavk..","..kvvvvvvvvk..","..kkkkkkkkkk.."],"pal":{"k":"#1c101c","e":"#1c101c","l":"#3a6a4a","L":"#5a8a5a","g":"#b4b0b8","s":"#d89a70","S":"#a8704a","v":"#6a3a4a","V":"#4a2434","a":"#e0d8c4","A":"#b8ae96","w":"#a87a3a","W":"#7a5424","h":"#7ad66a","r":"#e07ab0"}},"otavio":{"rows":["k...kkkkkk....","a..kaaaaaak...","k.kaAaaaaAak..","wkaaaaaaaaaak.","w.kssssssssk..","w.ksessssesk..","w.kssssssssk..","w..kSssssSk...","wkaakTTTTkaak.","wkaakTttTkaak.","wkskTttttTksk.","k.kkbybbybkkLk","...kppppppkkOk","...kBk..kBkkkk","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","a":"#9aa6b2","A":"#d4dce4","s":"#c88a5e","S":"#9a6440","T":"#2e4a7a","t":"#1e3258","b":"#3a2618","y":"#c8a040","p":"#3a3a44","B":"#2a1a10","w":"#7a4a24","L":"#ffd860","O":"#fff4c0"}},"tereza":{"rows":["..............","...kkkkkkkk...","..krrrrrrrrk..",".krrRrrrrRkkkk",".khhhhhhhhkAak",".khssssssskkwk",".khsesssseshwk","..ksssssssskwk",".ksskllllkssk.",".ksskllllkssk.",".kSkllLLllkSk.","..kklllyllkk..","...kppppppk...","...kBk..kBk...","...kkk..kkk..."],"pal":{"k":"#1c101c","e":"#1c101c","r":"#b83a2a","R":"#e0603a","h":"#2a1e1a","s":"#a8704a","S":"#7a4a2e","l":"#6a4024","L":"#4a2a14","p":"#3a3040","B":"#2a1a10","a":"#76828c","A":"#b4c0c8","w":"#7a4a24","y":"#ffb040"}},"lauro":{"rows":["...kkkkkkkk...","..kcccccccck..",".kcCccccccCck.",".kcwwwwwwwwck.",".kcssssssssck.","kkcsessssesck.","gkkwwwwwwwwk..","gkkwwwwwwwwk..","gkcckwwwwkcck.","GkcckWwwWkcck.","gkskcWwwWcksk.","gkkccbWWbcck..","gkkcccccccck..","gkkcCccccCck..","kkkkkkkkkkkk.."],"pal":{"k":"#1c101c","e":"#1c101c","c":"#6a5038","C":"#4a3624","w":"#e8e4dc","W":"#b8b2a8","s":"#d4a07a","S":"#a8764e","b":"#3a2618","g":"#8a6a40","G":"#6a4e2c"}}};
 const G = {
   A: ['.###.', '#...#', '#...#', '#####', '#...#', '#...#', '#...#'],
   B: ['####.', '#...#', '#...#', '####.', '#...#', '#...#', '####.'],
@@ -408,30 +408,90 @@ function chao(x, y) {
   if (Math.hypot(x - PEDRAS.x, y - PEDRAS.y) < 34) return 'musgo';
   return y > 620 ? 'gramaEsc' : 'grama';
 }
-const COR = {
-  grama: [[31, 61, 34], [42, 77, 42], [22, 48, 26]],
-  gramaEsc: [[22, 46, 30], [30, 58, 36], [14, 34, 22]],
-  terra: [[138, 122, 78], [156, 138, 88], [110, 96, 56]],
-  terraEsc: [[96, 84, 60], [112, 98, 70], [74, 64, 46]],
-  trilha: [[120, 104, 66], [140, 122, 78], [96, 82, 50]],
-  agua: [[29, 74, 120], [58, 120, 168], [29, 74, 120]],
-  aguaB: [[18, 51, 88], [18, 51, 88], [18, 51, 88]],
-  ponte: [[122, 82, 50], [138, 96, 60], [90, 58, 34]],
-  musgo: [[52, 78, 50], [70, 96, 60], [40, 62, 40]],
-};
 const andavel = (t) => t !== 'agua' && t !== 'aguaB';
-
+const rgb = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+const misturar = (a, b, k) => a.map((v, i) => Math.round(v + (b[i] - v) * k));
+const paraHex = (c) => '#' + c.map((v) => v.toString(16).padStart(2, '0')).join('');
+// paleta do chão da vila vista de cima da série (pixel/cenas.mjs, V2)
+const V2 = {
+  g: ['#16301a', '#1d3b1f', '#244624', '#2d5229'].map(rgb), gT: rgb('#4e7e3a'),
+  terra: rgb('#8e7a4c'), terraL: rgb('#a48e5a'), terraD: rgb('#6c5a36'), terraB: rgb('#56482c'), sulco: rgb('#7a6840'),
+  praca: rgb('#8a7650'), pracaL: rgb('#9a865c'), pracaD: rgb('#74623e'),
+  pedra: rgb('#7c7a74'), pedraL: rgb('#9a978e'), junta: rgb('#4a4640'),
+  flor: ['#e8d86a', '#e88aa8', '#c8d8f0'].map(rgb),
+  agua: rgb('#1d4a78'), agua2: rgb('#3a78a8'), aguaD: rgb('#123358'),
+  areia: rgb('#a8946a'), areiaD: rgb('#86744e'), espuma: rgb('#9ac8e0'),
+  musgo: [rgb('#34503a'), rgb('#46644a')], ponte: [rgb('#8a6438'), rgb('#5a3c22')],
+};
+const B4 = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
+const dith = (x, y) => (B4[(y & 3) * 4 + (x & 3)] + 0.5) / 16;
+function vnoise(x, y, seed) {
+  const x0 = Math.floor(x), y0 = Math.floor(y), fx = x - x0, fy = y - y0, sx = fx * fx * (3 - 2 * fx), sy = fy * fy * (3 - 2 * fy);
+  const a = hash(x0, y0, seed), b = hash(x0 + 1, y0, seed), c = hash(x0, y0 + 1, seed), d = hash(x0 + 1, y0 + 1, seed);
+  return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
+}
+const FOGO = {x: CX, y: CY + 8};
+function estradaD(x, y) { // 0 no meio da estrada, 1 na borda
+  let d = 9;
+  if (y > CY && y < DEN.y) d = Math.min(d, Math.abs(x - pathX(y)) / 9);
+  if (x > CX && x < 1010) d = Math.min(d, Math.abs(y - pathE(x)) / 8);
+  d = Math.min(d, distSeg(x, y, CX, CY, LAKE.x, LAKE.y) / 7);
+  return d;
+}
+function corChao(x, y) {
+  const t = chao(x + 0.5, y + 0.5), th = dith(x, y);
+  const rxd = Math.abs(x - riverX(y)), la = Math.atan2(y - LAKE.y, x - LAKE.x), ld = Math.hypot(x - LAKE.x, y - LAKE.y) - LAKE.r - 5 * Math.sin(la * 4);
+  if (t === 'agua' || t === 'aguaB') {
+    if (t === 'aguaB') return (rxd > 13.6 || ld > -1.6) && th > 0.5 ? V2.espuma : V2.aguaD;
+    return hash(Math.floor(x / 2), Math.floor(y / 1.4), 3) > 0.94 ? V2.agua2 : V2.agua;
+  }
+  if (t === 'ponte') return y % 4 === 0 || x % 9 === 0 ? V2.ponte[1] : V2.ponte[0];
+  // grama: manchas grandes em 4 tons, borda pontilhada
+  const n = vnoise(x / 33, y / 33, 1) * 0.7 + vnoise(x / 12, y / 12, 2) * 0.3;
+  let i = Math.max(0, Math.min(3, Math.floor(n * 4.4 - 0.6 + th * 0.4)));
+  if (t === 'gramaEsc') i = Math.max(0, i - 1);
+  let c = V2.g[i];
+  const tx = Math.floor(x / 6), ty = Math.floor(y / 6), ht = hash(tx, ty, 7), fx = x - tx * 6, fy = y - ty * 6;
+  if (ht > 0.82 && fx === 2 && fy === 2) c = ht > 0.985 ? V2.flor[Math.floor(ht * 1000) % 3] : V2.gT;
+  else if (ht > 0.82 && fx === 2 && fy === 3) c = V2.g[0];
+  if (t === 'musgo') c = V2.musgo[n + th * 0.2 > 0.55 ? 1 : 0];
+  if (t === 'terraEsc') c = n + th * 0.3 > 0.62 ? V2.terraD : V2.terraB;
+  // margem de areia no rio e no lago
+  if ((rxd >= 15 && rxd < 19.5) || (ld >= 0 && ld < 4.5)) c = rxd > 18.5 || ld > 3.5 ? (th > 0.5 ? V2.areiaD : c) : hash(x, y, 9) > 0.93 ? V2.areiaD : V2.areia;
+  // praça: terra batida com borda irregular e marcada
+  const d = Math.hypot(x - CX, y - CY), a = Math.atan2(y - CY, x - CX);
+  const R = clearR(a) + (vnoise(x / 12, y / 12, 5) - 0.5) * 15;
+  if (d < R) {
+    const m = vnoise(x / 18, y / 18, 3) + (th - 0.5) * 0.1;
+    c = m > 0.64 ? V2.pracaL : m < 0.38 ? V2.pracaD : V2.praca;
+    if (d > R - 3.3) c = V2.terraB; else if (d > R - 6.6 && th > 0.5) c = V2.pracaD;
+    const hp = hash(Math.floor(x / 2.3), Math.floor(y / 2.3), 4); if (hp > 0.988) c = V2.pedra; else if (hp < 0.005) c = V2.pracaL;
+  } else if (d < R + 5 && th > 0.45 && t !== 'agua') c = V2.g[0];
+  // calçamento de pedra em volta da fogueira
+  const df = Math.hypot((x - FOGO.x) / 3, (y - FOGO.y) * 1.15 / 3);
+  if (df < 8.9 && df > 2.4) {
+    const ang = Math.atan2(y - FOGO.y, x - FOGO.x), anel = Math.floor((df - 2.4) / 1.3), q = (ang + Math.PI) / (Math.PI * 2) * (14 + anel * 5) + anel * 0.5, seg = Math.floor(q);
+    const fr = (df - 2.4) / 1.3 - anel, fa = q % 1;
+    c = fr < 0.16 || fa < 0.12 ? V2.junta : hash(seg, anel, 6) > 0.6 ? V2.pedraL : hash(seg, anel, 6) < 0.15 ? V2.pracaD : V2.pedra;
+    return c;
+  }
+  // estradas: miolo claro, dois sulcos de roda, borda escura e grama pisada
+  if (d > R - 14 && t !== 'agua') {
+    const e = estradaD(x, y), dd = e + (th - 0.5) * 0.12, hp = hash(Math.floor(x / 1.6), Math.floor(y / 1.6), 8);
+    if (dd < 1) {
+      c = dd > 0.84 ? V2.terraB : dd > 0.66 ? V2.terraD : dd < 0.3 ? V2.terraL : V2.terra;
+      if (Math.abs(dd - 0.48) < 0.07) c = V2.sulco;
+      if (dd < 0.8 && hp > 0.985) c = V2.terraL; else if (dd < 0.8 && hp < 0.015) c = V2.terraB;
+    } else if (dd < 1.3) c = hp > 0.9 ? V2.pedra : th > 0.4 ? V2.g[0] : c;
+    else if (dd < 2.6 && d > R + 9 && hash(Math.floor(x / 2.6), Math.floor(y / 2.6), 15) > 0.975) c = V2.flor[Math.floor(hp * 3) % 3];
+  }
+  return c;
+}
 function gerarChao() {
   const c = tela(MW, MH), x = c.getContext('2d'), img = x.createImageData(MW, MH), d = img.data;
   for (let py = 0; py < MH; py++) for (let px = 0; px < MW; px++) {
-    const t = chao(px + 0.5, py + 0.5);
-    const n = hash(Math.floor(px / 2), Math.floor(py / 2));
-    const pal = COR[t];
-    let col = n > 0.86 ? pal[1] : n < 0.14 ? pal[2] : pal[0];
-    if (t === 'ponte') col = (py % 4 === 0) ? pal[2] : pal[0];
-    if (t === 'agua' && hash(px, Math.floor(py / 2), 3) > 0.985) col = pal[1];
-    if ((t === 'grama' || t === 'gramaEsc') && hash(px, py, 5) > 0.997) col = [180, 160, 90];
-    const i = (py * MW + px) * 4; d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
+    const col = corChao(px, py), i = (py * MW + px) * 4;
+    d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
   }
   x.putImageData(img, 0, 0);
   return c;
@@ -439,42 +499,44 @@ function gerarChao() {
 
 // árvores, casas e objetos
 function circuloPx(ctx, cx, cy, r) { for (let dy = -r; dy <= r; dy++) { const w = Math.floor(Math.sqrt(r * r - dy * dy + 0.5)); ctx.fillRect(cx - w, cy + dy, 2 * w + 1, 1); } }
-function arteArvore(r, pinho, seed) {
-  const W = 2 * r + 6, H = 2 * r + 10, c = tela(W, H), x = c.getContext('2d');
-  const pal = pinho ? ['#123a2c', '#1e5238', '#2f6c44'] : ['#1c4a26', '#2f6a32', '#4f8c3c'];
-  const cx = r + 3, cy = r + 2;
-  x.fillStyle = 'rgba(8,20,12,.55)'; for (let dy = -2; dy <= 2; dy++) { const w = Math.round(Math.sqrt(1 - (dy * dy) / 6.25) * r * 0.8); x.fillRect(cx - w + 2, H - 4 + dy, 2 * w, 1); }
-  x.fillStyle = INK; x.fillRect(cx - 2, cy + r - 2, 4, H - (cy + r) - 1);
-  x.fillStyle = '#5a3a22'; x.fillRect(cx - 1, cy + r - 2, 2, H - (cy + r) - 2);
-  x.fillStyle = INK; circuloPx(x, cx, cy, r);
-  x.fillStyle = pal[0]; circuloPx(x, cx, cy, r - 1);
-  x.fillStyle = pal[1]; circuloPx(x, cx - Math.round(r * 0.2), cy - Math.round(r * 0.22), Math.round(r * 0.66));
-  x.fillStyle = pal[2]; circuloPx(x, cx - Math.round(r * 0.38), cy - Math.round(r * 0.42), Math.max(1, Math.round(r * 0.28)));
-  if (pinho) { x.fillStyle = pal[2]; x.fillRect(cx, cy - r + 1, 1, 1); }
-  return {c, ax: cx, ay: H - 3};
+function arteArvore(r, pinho, v) {
+  // copa com contorno escuro, luz vindo de cima à esquerda e sombra projetada (como arvoreV2 da série)
+  const W = Math.ceil(r * 2.6) + 6, H = Math.ceil(r * 2.5) + 6, cx = r + 3, cy = r + 3;
+  const c = tela(W, H), x = c.getContext('2d');
+  const pal = (pinho ? ['#123a2c', '#1e5238', '#2f6c44'] : ['#1c4a26', '#2f6a32', '#4f8c3c']).map(rgb);
+  const esc = paraHex(misturar(pal[0], [8, 16, 12], 0.45)), cores = pal.map(paraHex);
+  x.fillStyle = 'rgba(6,16,10,.75)';
+  for (let dy = -Math.round(r * 0.85); dy <= Math.round(r * 0.85); dy++) { const w = Math.round(r * 1.05 * Math.sqrt(Math.max(0, 1 - (dy / (r * 0.85)) ** 2))); x.fillRect(Math.round(cx + r * 0.35 - w), Math.round(cy + r * 0.45 + dy), 2 * w + 1, 1); }
+  const forma = pinho ? (ang) => 0.84 + 0.16 * Math.cos(ang * 9 + v * 6) : (ang) => 0.9 + 0.1 * Math.sin(ang * 4 + v * 6) + 0.05 * Math.sin(ang * 7);
+  for (let py = 0; py < H; py++) for (let px = 0; px < W; px++) {
+    const dx = px + 0.5 - cx, dy = py + 0.5 - cy, ang = Math.atan2(dy, dx), rr = Math.hypot(dx, dy) / (r * forma(ang));
+    if (rr > 1) continue;
+    const l = Math.hypot(dx + r * 0.38, dy + r * 0.45) / r, th = dith(px, py) * 0.35;
+    let col = rr > 0.88 ? esc : l + th < 0.55 ? cores[2] : l + th < 1.0 ? cores[1] : cores[0];
+    if (pinho && rr < 0.88) {
+      const camada = Math.floor((1 - rr) * 3.2);
+      col = camada >= 2 ? (l < 0.9 ? cores[2] : cores[1]) : camada === 1 ? (l < 0.8 ? cores[1] : cores[0]) : cores[0];
+      if (Math.abs(((ang * 9 / Math.PI / 2 + v * 4) % 1 + 1) % 1 - 0.5) < 0.08 && rr > 0.3) col = esc;
+    }
+    x.fillStyle = col; x.fillRect(px, py, 1, 1);
+  }
+  if (!pinho) for (let k = 0; k < 3; k++) { x.fillStyle = paraHex(misturar(pal[2], [220, 240, 180], 0.25)); x.fillRect(Math.round(cx - r * 0.3 + (hash(k, v * 99) - 0.5) * r), Math.round(cy - r * 0.35 + (hash(k, v * 77) - 0.5) * r * 0.8), 1, 1); }
+  return {c, ax: cx, ay: Math.round(cy + r * 0.6)};
 }
 const ARVORES_ARTE = [];
-for (const p of [0, 1]) for (const r of [7, 8, 9, 10]) ARVORES_ARTE.push(arteArvore(r, p));
+{ const r = rnd(4); for (const p of [0, 1]) for (const raio of [9, 10, 11, 12, 13]) ARVORES_ARTE.push(arteArvore(raio, p, r())); }
 
-function arteCasa(w, h, o = {}) {
-  const c = tela(w, h), x = c.getContext('2d');
-  const tetoH = h - 11;
-  x.fillStyle = INK; x.fillRect(0, 0, w, h);
-  // telhado de palha em dois tons (vista 3/4 de cima)
-  x.fillStyle = '#d4a850'; x.fillRect(1, 1, w - 2, Math.floor(tetoH / 2));
-  x.fillStyle = '#b88a3a'; x.fillRect(1, 1 + Math.floor(tetoH / 2), w - 2, tetoH - 1 - Math.floor(tetoH / 2));
-  x.fillStyle = '#8a6428'; for (let y = 3; y < tetoH; y += 3) for (let i = 1 + (y % 2); i < w - 1; i += 4) x.fillRect(i, y, 2, 1);
-  x.fillStyle = '#e8c070'; x.fillRect(1, Math.floor(tetoH / 2), w - 2, 1);
-  x.fillStyle = INK; x.fillRect(0, tetoH, w, 1);
-  // parede de toras
-  x.fillStyle = '#5a3a22'; x.fillRect(1, tetoH + 1, w - 2, h - tetoH - 2);
-  x.fillStyle = '#3a2414'; for (let y = tetoH + 3; y < h - 1; y += 3) x.fillRect(1, y, w - 2, 1);
-  const pm = Math.floor(w / 2);
-  x.fillStyle = INK; x.fillRect(pm - 4, h - 9, 8, 8);
-  x.fillStyle = '#2a1a10'; x.fillRect(pm - 3, h - 8, 6, 7);
-  if (o.porta) { x.fillStyle = o.porta; x.fillRect(pm - 1, h - 7, 2, 2); }
-  for (const jx of [5, w - 10]) { x.fillStyle = INK; x.fillRect(jx, h - 8, 6, 5); x.fillStyle = '#ffd860'; x.fillRect(jx + 1, h - 7, 4, 3); x.fillStyle = '#ff9a40'; x.fillRect(jx + 1, h - 5, 4, 1); }
-  if (o.chamine) { x.fillStyle = INK; x.fillRect(w - 12, 2, 7, 9); x.fillStyle = '#6a6a70'; x.fillRect(w - 11, 3, 5, 7); x.fillStyle = '#44444c'; x.fillRect(w - 11, 3, 5, 1); }
+// casa em 3/4 da série (pixel/casas.mjs): telhado de telhas, parede de enxaimel, base de pedra, porta e janela acesa
+const PAREDES = {reboco: ['#e8dcc0', '#6a4428'], madeira: ['#8a5a32', '#4a2e18'], pedra: ['#9a9aa0', '#5a5a62'], clara: ['#f4f0e6', '#b8b0a0'], mogno: ['#5a2418', '#2e120c']};
+function paletaCasa(parede, telhado) {
+  const R = rgb(telhado), [w, T] = PAREDES[parede];
+  return {k: INK, R: telhado, r: paraHex(misturar(R, [0, 0, 0], 0.28)), q: paraHex(misturar(R, [0, 0, 0], 0.45)), E: '#5a3a20',
+    w, T, g: '#3a4a6a', y: '#ffcc66', d: '#6a4024', D: '#4a2a14', o: '#c8a040', S: '#7a7a82', s: '#5a5a62', p: '#8a8a90', C: '#8a8a90', c: '#5a5a62'};
+}
+function arteCasa(k) {
+  const base = spriteCanvas(k.chamine ? SPR.casa.chamine : SPR.casa.rows, paletaCasa(k.parede, k.telhado));
+  const w = Math.round(26 * k.big), h = Math.round(26 * k.big), c = tela(w, h), x = c.getContext('2d');
+  x.imageSmoothingEnabled = false; x.drawImage(base, 0, 0, w, h);
   return c;
 }
 function artePedras() {
@@ -495,19 +557,26 @@ function construirMundo() {
   const solido = new Uint8Array(TW * TH);
   const objetos = [];
   const marca = (x0, y0, x1, y1) => { for (let ty = Math.floor(y0 / TS); ty <= Math.floor((y1 - 1) / TS); ty++) for (let tx = Math.floor(x0 / TS); tx <= Math.floor((x1 - 1) / TS); tx++) if (tx >= 0 && ty >= 0 && tx < TW && ty < TH) solido[ty * TW + tx] = 1; };
+  const corElem = rgb(OPC.elem.find((e) => e.id === J.cfg.elem).cor);
   const casas = [
-    {id: 'cabana', x: CX + 6, y: CY - 52, w: 42, h: 34, chamine: true},
-    {id: 'drakin', x: CX - 84, y: CY + 12, w: 32, h: 30},
-    {id: 'garnier', x: CX - 58, y: CY - 50, w: 32, h: 30},
-    {id: 'joao', x: CX + 70, y: CY - 44, w: 32, h: 30},
-    {id: 'mariah', x: CX + 86, y: CY + 22, w: 32, h: 30},
-    {id: 'sua', x: CX - 56, y: CY + 72, w: 32, h: 30, sua: true},
+    {id: 'cabana', x: CX + 6, y: CY - 40, parede: 'madeira', telhado: '#c8a040', chamine: true, big: 1.75},
+    {id: 'garnier', x: CX - 66, y: CY - 42, parede: 'reboco', telhado: '#3a5a8a', chamine: true},
+    {id: 'joao', x: CX + 72, y: CY - 38, parede: 'madeira', telhado: '#b8502a'},
+    {id: 'drakin', x: CX - 88, y: CY + 16, parede: 'pedra', telhado: '#6a2a1a', chamine: true},
+    {id: 'mariah', x: CX + 90, y: CY + 22, parede: 'reboco', telhado: '#4a2a5a'},
+    {id: 'sua', x: CX - 54, y: CY + 74, parede: 'reboco', telhado: paraHex(misturar(corElem, [20, 16, 24], 0.45)), sua: true},
+    {id: 'forja', x: CX - 74, y: CY + 128, parede: 'pedra', telhado: '#3a3238', chamine: true, big: 1.65},
+    {id: 'cura', x: CX + 74, y: CY + 104, parede: 'clara', telhado: '#3e7a4a', big: 1.65},
   ];
   for (const k of casas) {
-    k.arte = arteCasa(k.w, k.h, {chamine: k.chamine, porta: k.sua ? OPC.elem.find((e) => e.id === J.cfg.elem).cor : null});
+    k.big = k.big || 1;
+    k.arte = arteCasa(k); k.w = k.arte.width; k.h = k.arte.height;
     objetos.push({tipo: 'casa', x: k.x, y: k.y, ref: k});
-    marca(k.x - k.w / 2 + 2, k.y - 14, k.x + k.w / 2 - 2, k.y);
+    marca(k.x - k.w / 2 + 3, k.y - Math.round(k.h * 0.42), k.x + k.w / 2 - 3, k.y);
   }
+  const lampioes = [[CX - 36, CY + 64], [CX + 42, CY + 68], [CX - 104, CY - 14], [CX + 112, CY - 20], [CX - 30, CY - 74],
+    [pathX(CY + 180) + 15, CY + 180], [pathX(CY + 270) - 15, CY + 270], [CX + 170, pathE(CX + 170) - 13], [CX + 300, pathE(CX + 300) + 13]];
+  for (const [x, y] of lampioes) objetos.push({tipo: 'lampiao', x: Math.round(x), y: Math.round(y), s: hash(x, y, 2)});
   objetos.push({tipo: 'fogueira', x: CX, y: CY + 8});
   marca(CX - 5, CY + 2, CX + 5, CY + 10);
   const pedras = {tipo: 'pedras', x: PEDRAS.x, y: PEDRAS.y + 4, arte: artePedras()};
@@ -534,7 +603,9 @@ function construirMundo() {
   const brilhos = [];
   const rb = rnd(7);
   for (let i = 0; i < 900; i++) { const x = Math.floor(rb() * MW), y = Math.floor(rb() * MH); if (chao(x, y) === 'agua') brilhos.push([x, y, rb()]); }
-  return {solido, objetos, casas, brilhos};
+  const vagalumes = [], rv = rnd(31);
+  for (let i = 0; i < 260; i++) { const x = rv() * MW, y = rv() * MH; if (Math.hypot(x - CX, y - CY) > 125 && andavel(chao(x, y))) vagalumes.push({x, y, s: rv()}); }
+  return {solido, objetos, casas, brilhos, vagalumes, lampioes: objetos.filter((o) => o.tipo === 'lampiao')};
 }
 
 function livre(x, y) {
@@ -564,9 +635,9 @@ const NPC_DEF = [
   {id: 'yanquer', nome: 'YANQUER', spr: 'yanquer', x: CX - 20, y: CY + 4, fixo: true},
   // personagens fixos do jogo (nunca viram jogador)
   {id: 'bento', nome: 'BENTO', papel: 'MERCADOR', spr: 'bento', x: CX + 50, y: CY + 46, fixo: true},
-  {id: 'celeste', nome: 'DONA CELESTE', papel: 'CURANDEIRA', spr: 'celeste', x: CX + 38, y: CY - 4, fixo: true},
+  {id: 'celeste', nome: 'DONA CELESTE', papel: 'CURANDEIRA', spr: 'celeste', x: CX + 52, y: CY + 112, fixo: true},
   {id: 'otavio', nome: 'OTÁVIO', papel: 'GUARDA', spr: 'otavio', x: pathX(CY + 116) - 18, y: CY + 116, raio: 8},
-  {id: 'tereza', nome: 'TEREZA', papel: 'FERREIRA', spr: 'tereza', x: CX - 96, y: CY + 54, fixo: true},
+  {id: 'tereza', nome: 'TEREZA', papel: 'FERREIRA', spr: 'tereza', x: CX - 46, y: CY + 134, fixo: true},
   {id: 'lauro', nome: 'SEU LAURO', papel: 'HISTÓRIAS', spr: 'lauro', x: CX + 16, y: CY + 16, fixo: true},
   // moradores da série (no online, serão jogadores; offline, passeiam perto de casa)
   {id: 'drakin', nome: 'DRAKIN', spr: 'drakin', casa: 'drakin', morador: true},
@@ -576,7 +647,7 @@ const NPC_DEF = [
 ];
 let NPCS = [], LOBOS = [], TIROS = [], FX = [], TEXTOS = [];
 const SPRN = {};
-for (const k of ['yanquer', 'bento', 'celeste', 'otavio', 'tereza', 'lauro', 'drakin', 'garnier', 'joao', 'mariah']) SPRN[k] = variantes(SPR[k].rows, SPR[k].pal);
+for (const k of ['yanquer', 'bento', 'celeste', 'otavio', 'tereza', 'lauro', 'drakin', 'garnier', 'joao', 'mariah']) { const e = SPR[k]; SPRN[k] = {...variantes(e.rows, e.pal), ax: e.ax ?? Math.floor(e.rows[0].length / 2), ay: e.ay ?? e.rows.length}; }
 const SPRL = SPR.lobo.frames.map((f) => variantes(f, SPR.lobo.pal));
 
 const ARMA_MAX = 5;
@@ -967,7 +1038,7 @@ function desenhar() {
       for (let i = -5; i <= 5; i++) { const a = a0 + (i / 5) * 1.1 * (0.6 + k * 0.4); for (const r of [12, 13, 14]) { ctx.fillStyle = r === 14 ? f.cor : '#e8f0f4'; ctx.fillRect(Math.round(px(f.x) + Math.cos(a) * r), Math.round(py(f.y) + Math.sin(a) * r * 0.8), 1, 1); } }
     }
   }
-  if (DIALOGO === null) for (const s of mundo.casas) { /* fumaça */ if (s.chamine) for (let k = 0; k < 6; k++) { const ph = (t * 0.3 + k / 6) % 1; const sx = px(s.x + s.w / 2 - 8 + ph * 6), sy = py(s.y - s.h - ph * 26); ctx.fillStyle = `rgba(138,144,160,${0.35 * (1 - ph)})`; circuloPx(ctx, sx, sy, Math.round(1 + ph * 2.5)); } }
+  if (DIALOGO === null) for (const s of mundo.casas) { /* fumaça */ if (s.chamine) for (let k = 0; k < 6; k++) { const ph = (t * 0.3 + k / 6) % 1; const sx = px(s.x - 6 * s.big + ph * 6), sy = py(s.y - s.h - 2 - ph * 26); ctx.fillStyle = `rgba(138,144,160,${0.35 * (1 - ph)})`; circuloPx(ctx, sx, sy, Math.round(1 + ph * 2.5)); } }
 
   // noite
   luz(t);
@@ -1008,14 +1079,27 @@ function desenharObjeto(o, t) {
     ctx.drawImage(a.c, px(o.x) - a.ax, py(o.y) - a.ay);
     ctx.globalAlpha = 1; return;
   }
-  if (o.tipo === 'casa') { const k = o.ref; ctx.drawImage(k.arte, px(k.x - k.w / 2), py(k.y - k.h)); return; }
+  if (o.tipo === 'casa') {
+    const k = o.ref, x = px(k.x), y = py(k.y);
+    ctx.fillStyle = 'rgba(6,16,10,.55)'; for (let dy = -2; dy <= 2; dy++) { const w = Math.round(k.w * 0.6 * Math.sqrt(1 - (dy / 3) ** 2)); ctx.fillRect(x - w, y + dy, 2 * w, 1); }
+    ctx.fillStyle = '#9c8a58'; ctx.fillRect(x - 3, y, 6, 5); // terra batida na porta
+    ctx.drawImage(k.arte, Math.round(x - k.w / 2), y - k.h);
+    return;
+  }
+  if (o.tipo === 'lampiao') {
+    const x = px(o.x), y = py(o.y);
+    ctx.fillStyle = 'rgba(6,16,10,.6)'; ctx.fillRect(x, y, 2, 1);
+    ctx.fillStyle = INK; ctx.fillRect(x - 1, y - 8, 3, 8); ctx.fillStyle = '#3a2414'; ctx.fillRect(x, y - 7, 1, 7);
+    ctx.fillStyle = INK; ctx.fillRect(x - 2, y - 11, 5, 4);
+    return;
+  }
   if (o.tipo === 'pedras') { ctx.drawImage(o.arte, px(o.x) - 17, py(o.y) - 24); return; }
   if (o.tipo === 'fogueira') { fogueira(px(o.x), py(o.y), t); return; }
   if (o.tipo === 'npc') {
-    const n = o.ref, s = SPRN[n.spr], c = n.flip ? (s.f) : s.n;
+    const n = o.ref, s = SPRN[n.spr], c = n.flip ? s.f : s.n;
     const bob = n.anda > 0 && Math.floor(n.anda) % 2 ? -1 : 0;
     ctx.fillStyle = 'rgba(5,6,12,.45)'; ctx.fillRect(px(n.x) - 4, py(n.y) - 1, 9, 2);
-    ctx.drawImage(c, px(n.x) - Math.floor(c.width / 2), py(n.y) - c.height + bob);
+    ctx.drawImage(c, px(n.x) - (n.flip ? c.width - s.ax : s.ax), py(n.y) - s.ay + bob);
     return;
   }
   if (o.tipo === 'lobo') {
@@ -1058,7 +1142,8 @@ function luz(t) {
   const fonte = (x, y, r) => { if (x + r < CAMX || y + r < CAMY || x - r > CAMX + VW || y - r > CAMY + VH) return; for (const [f, a] of [[1, 0.3], [0.78, 0.35], [0.55, 0.55]]) { dctx.globalAlpha = a; circuloPx(dctx, px(x), py(y), Math.round(r * f)); } };
   const fl = 0.92 + 0.08 * Math.sin(t * 11) * Math.sin(t * 7.3);
   fonte(CX, CY + 5, 92 * fl);
-  for (const k of mundo.casas) for (const jx of [5, k.w - 10]) fonte(k.x - k.w / 2 + jx + 2, k.y - 6, 16);
+  for (const k of mundo.casas) for (const jx of [-6.5, 6.5]) fonte(k.x + jx * k.big, k.y - 7.5 * k.big, 11 * k.big);
+  for (const l of mundo.lampioes) fonte(l.x, l.y - 9, 26);
   if (!J.morto) fonte(J.x, J.y - 6, 40);
   const ot = NPCS.find((n) => n.id === 'otavio'); if (ot) fonte(ot.x + (ot.flip ? -5 : 5), ot.y - 4, 22);
   for (const s of TIROS) if (s.tipo === 'mago') fonte(s.x, s.y, 18);
@@ -1066,6 +1151,18 @@ function luz(t) {
   dctx.globalAlpha = 1; dctx.globalCompositeOperation = 'source-over';
   ctx.drawImage(escuro, 0, 0);
   fogueira(px(CX), py(CY + 8), t, true);
+  // chama dos lampiões e janelas acesas por cima do escuro
+  for (const l of mundo.lampioes) { const fl = 0.85 + 0.15 * hash(Math.floor(t * 9), Math.round(l.x * 7)); ctx.fillStyle = fl > 0.95 ? '#ffe080' : '#ffb84a'; ctx.fillRect(px(l.x) - 1, py(l.y) - 10, 3, 2); }
+  // vaga-lumes na mata
+  for (const f of mundo.vagalumes) {
+    const x = f.x + Math.sin(t * 0.7 + f.s * 10) * 7, y = f.y + Math.cos(t * 0.5 + f.s * 7) * 4;
+    if (x < CAMX || y < CAMY || x > CAMX + VW || y > CAMY + VH) continue;
+    const a = Math.sin(t * 2.2 + f.s * 40);
+    if (a < 0.2) continue;
+    ctx.globalAlpha = a * 0.35; ctx.fillStyle = '#c8f060'; ctx.fillRect(px(x) - 1, py(y), 3, 1); ctx.fillRect(px(x), py(y) - 1, 1, 3);
+    ctx.globalAlpha = a; ctx.fillStyle = '#eaff90'; ctx.fillRect(px(x), py(y), 1, 1);
+  }
+  ctx.globalAlpha = 1;
   // lobos de sombra: um contorno fraco por cima do escuro
   ctx.globalAlpha = 0.32;
   for (const l of LOBOS) { const s = SPRL[l.quadro]; ctx.drawImage(l.flip ? s.f : s.n, px(l.x) - 10, py(l.y) - (l.forte ? 12 : 10)); }
